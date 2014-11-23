@@ -1,0 +1,6 @@
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\bin\hy-go.dll.config
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\bin\hy-go.dll
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\bin\hy-go.pdb
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\obj\Debug\hy-go.csprojResolveAssemblyReference.cache
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\obj\Debug\hy-go.dll
+C:\_temp\GitHub\nn-hy-go\src\hy-go\hy-go\obj\Debug\hy-go.pdb
