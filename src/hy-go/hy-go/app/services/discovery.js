@@ -38,15 +38,21 @@
 
         //private
         function discover(url) {
-            log("discover api for : " + url);
+            if (common.isNotNull(url)) {
 
-            if (!(cacheService.apiDocumentation(url) == null)) {
-                log("loaded from cache");
-                return getFromCache(url);
-               
-            } else {
-                log("loading from remote");
-                return getFromRemote(url);                
+                log("discover api for : " + url);
+
+                if (!(cacheService.apiDocumentation(url) == null)) {
+                    log("loaded from cache");
+                    return getFromCache(url);
+
+                } else {
+                    log("loading from remote");
+                    return getFromRemote(url);
+                }
+            }
+            else {
+                return null;
             }
         };
 

@@ -1,9 +1,20 @@
 ﻿<section data-ng-controller="debug as vm">
-  
-    <div>
-        Enter a Url : <input type="text" ng-model="vm.adressUrl"/> 
-        <button ng-click="vm.loadApiDoc()">Load</button>
-        <div>display doc : </div>
-        <div>{{vm.apiDoc}}</div>
+    <p></p>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" data-ng-model="vm.adressUrl" placeholder="{{vm.UrlplaceHolder}}">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="vm.adressUrl = ''">x</button>
+                    <button class="btn btn-default" type="button" ng-click="vm.loadApiDoc()">Load!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-lg-6">
+            {{vm.apiDoc}}
+        </div>
     </div>
 </section>

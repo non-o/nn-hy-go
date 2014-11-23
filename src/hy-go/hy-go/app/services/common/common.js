@@ -16,7 +16,10 @@
             // generic
             isNumber: isNumber,
             logger: logger, 
-            textContains: textContains
+            textContains: textContains,
+            isNull: isNull,
+            isNotNull: isNotNull
+
         };
 
         return service;
@@ -25,6 +28,22 @@
         function isNumber(val) {
             // negative or positive
             return /^[-]?\d+$/.test(val);
+        }
+
+        function isNull(val) {
+            if(!(val == null))
+            {
+                if (val === '')
+                {
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
+
+        function isNotNull(val) {
+            return !isNull(val);
         }
 
         function textContains(text, searchText) {
