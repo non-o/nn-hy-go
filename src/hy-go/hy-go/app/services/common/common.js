@@ -18,7 +18,9 @@
             logger: logger, 
             textContains: textContains,
             isNull: isNull,
-            isNotNull: isNotNull
+            isNotNull: isNotNull,
+            prettyPrint: prettyPrint,
+            findNonJsonLdProperties:findNonJsonLdProperties
 
         };
 
@@ -49,5 +51,38 @@
         function textContains(text, searchText) {
             return text && -1 !== text.toLowerCase().indexOf(searchText.toLowerCase());
         }
+
+        function prettyPrint(obj)
+        {
+            return JSON.stringify(obj, undefined, 2);
+        }
+
+        function findNonJsonLdProperties(doc)
+        {
+            var results = [];
+            Object.keys(doc).forEach(function(key) {
+                if(!key.startsWith('@'))
+                {
+                    console.log(key);
+                    results.push(key);
+                }
+                
+            });
+            return results;
+
+        }
+
+        function findObject(collection, searchField, searchValue)
+        {
+            var results = [];
+
+            for (var i = 0 ; i < collection.length ; i++) {
+                if (collection[i][searchField] == searchValue) {
+                    results.push(collection[i]);
+                }
+            }
+
+            return results;
+        };
     }
 })();

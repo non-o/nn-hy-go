@@ -1,7 +1,7 @@
 ﻿<section data-ng-controller="debug as vm">
     <p></p>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
             <div class="input-group">
                 <input type="text" class="form-control" data-ng-model="vm.adressUrl" placeholder="{{vm.UrlplaceHolder}}">
                 <span class="input-group-btn">
@@ -13,8 +13,17 @@
     </div>
     <p></p>
     <div class="row">
-        <div class="col-lg-6">
-            {{vm.apiDoc}}
+        <div class="col-lg-12">
+        <pre>{{vm.apiData}}</pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+         <button class="btn btn-default" type="button" ng-click="vm.toggleApiDoc()">Show Api Doc</button>
+         <p></p>
+         <div data-ng-show="vm.showDoc">
+        <pre>{{vm.apiDoc}}</pre>
+        </div>
         </div>
     </div>
 </section>

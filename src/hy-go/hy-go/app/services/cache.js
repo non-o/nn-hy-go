@@ -37,7 +37,7 @@
                 myCache.put(key, content);
 
             }
-            log("return content with key " + key);
+            // log("return content with key " + key);
 
             return myCache.get(key);
         }

@@ -54,7 +54,7 @@
             source = source ? '[' + source + '] ' : '';
             data = data || '-';
             message = message || 'no message provided';
-            write(source, message, data);
+            write(source, message, ':', data);
             //message = '[DEBUG MSG] ' + message;
             //if (showToast) {
             //    if (toastType === 'error') {

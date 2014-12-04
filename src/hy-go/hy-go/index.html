@@ -1,13 +1,7 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="nnHydra">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <!-- traceur -->
-    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"/>
-    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"/>
-    <script>
-      traceur.options.experimental = true;
-  </script>
   <!--jquery required for bootstrap-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <!--bootstrap design css-->
@@ -19,29 +13,28 @@
   <script src="scripts/angular.js"></script>
   <script src="scripts/angular-route.js"></script>
 
+  <!-- external dependencies -->
+   <script src="scripts/jsonld.js"></script>
+  
+
   <!-- application -->
   <script src="app/services/common/common.js"></script>
   <script src="app/services/common/logger.js"></script>
-  <script src="app/app.js"></script>
+  <script src="app/app.js"></script> 
   <script src="app/config.route.js"></script>
   <script src="app/services/cache.js"></script>
   <script src="app/services/discovery.js"></script>
   <script src="app/services/apiDocumentation.js"></script>
+  <script src="app/services/apiParser.js"></script>
   <script src="app/debug/debug.js"></script>
 
 
   <title></title>
 </head>
-<body>
-    <div class="container-fluid">
+<body data-ng-app="nnHydra">
+    <div class="container">
         <div data-ng-view />
     </div>
-    <script>
-        System.import("app").then(function(a){
-            angular.element(document).ready(function() {
-              angular.bootstrap(document, ['nnHydra']);
-          });
-        });
-    </script>
+   
 </body>
 </html>
