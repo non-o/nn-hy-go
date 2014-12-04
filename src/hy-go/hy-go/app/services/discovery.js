@@ -15,7 +15,7 @@
 
         //interface
         var service = {
-            supportedClasses: supportedClasses,
+            discover: discover,
         };
 
         init();
@@ -27,10 +27,6 @@
         //
         function entryPoint() {
 
-        };
-
-        function supportedClasses(url) {
-            return discover(url);
         };
 
         function init() {

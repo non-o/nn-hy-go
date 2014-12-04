@@ -3,9 +3,9 @@
 
     var controllerId = 'debug';
 
-    angular.module('nnHydra').controller(controllerId, ['common', 'discovery', debug]);
+    angular.module('nnHydra').controller(controllerId, ['common', 'apiDocumentation', debug]);
 
-    function debug(common, discovery) {
+    function debug(common, apiDocumentation) {
         var log = common.logger.getLogFn(controllerId);
 
         //scope variables
@@ -28,10 +28,9 @@
                 log('after ' + vm.adressUrl);
                 vm.apiDoc = 'loading...';
 
-                discovery.supportedClasses(vm.adressUrl).
+                apiDocumentation.discover(vm.adressUrl).
                     then(function (d) {
-                        log('setting apiDoc');
-                        vm.apiDoc = d;
+                       vm.apiDoc = apiDocumentation.supportedClasses();
                     });
             }
 
